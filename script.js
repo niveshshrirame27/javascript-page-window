@@ -12,14 +12,48 @@ function calculate() {
     }
 }
 
-document.getElementById("showExecutionButton").addEventListener("click", function () {
-    const solution = document.querySelector(".execution");
+document.getElementById("showExecutionButton-1").addEventListener("click", function () {
+    const solution = document.querySelector(".execution-1");
     if (solution.style.display === "none") {
         solution.style.display = "block";
-        document.getElementById("showExecutionButton").textContent = "Hide Execution";
+        document.getElementById("showExecutionButton-1").textContent = "Hide Execution";
     } else {
         solution.style.display = "none";
-        document.getElementById("showExecutionButton").textContent = "Show Execution";
+        document.getElementById("showExecutionButton-1").textContent = "Show Execution";
     }
 });
 
+function updateClock() {
+
+    const now = new Date();
+    const timeElement = document.getElementById("time");
+
+    let hours = now.getHours();
+    const isPm = hours >= 12;
+
+    if (hours > 12) {
+        hours -= 12;
+    }
+
+    hours = hours.toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    timeElement.textContent = `${hours}:${minutes}:${seconds} ${isPm ? "PM" : "AM"}`;
+
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+document.getElementById("showExecutionButton-2").addEventListener("click", function () {
+    const solution = document.querySelector(".execution-2");
+    if (solution.style.display === "none") {
+        solution.style.display = "block";
+        document.getElementById("showExecutionButton-2").textContent = "Hide Execution";
+    } else {
+        solution.style.display = "none";
+        document.getElementById("showExecutionButton-2").textContent = "Show Execution";
+    }
+});

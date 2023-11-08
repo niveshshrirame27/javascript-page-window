@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="About">
+        <div class="about">
         <h1>Javascript</h1>
         <p>Javascript is a high-level,
              interpreted, object-oriented programming language.
@@ -38,39 +38,74 @@
             <input type="number" id="inputY" placeholder="Enter value for y">
             <button onclick="calculate()">Calculate</button>
             <div id="ex-1-result"></div>
-            <button id="showExecutionButton">Show Execution</button>
-            <div class="execution">
-                <h4>This is how you make this :-</h4>
-                
-                <preview>
+            <button id="showExecutionButton-1">Show Execution</button>
+            <div class="execution-1">
+                <pre>
                     <code>
-// make sure to add a element in your html file with id attribute set to "result"...
-// also add inputs for x & y values and there id attribute set to "inputX" & "inputY" respectively. 
-// also add a button to calculate the result... 
+        // make sure to add a element in your html file with id attribute set to "result"...
+        // also add inputs for x & y values and there id attribute set to "inputX" & "inputY" respectively. 
+        // also add a button to calculate the result...
 
-//Then add this function in your javascript file...
+        //Then add this function in your javascript file...
 
-function calculate() {
+        function calculate() {
 
-    // Get user input values for x and y
+        // Get user input values for x and y
 
-    let x = parseFloat(document.getElementById("inputX").value);
-    let y = parseFloat(document.getElementById("inputY").value);
+        let x = parseFloat(document.getElementById("inputX").value);
+        let y = parseFloat(document.getElementById("inputY").value);
 
-    // Check if the inputs are valid numbers
+        // Check if the inputs are valid numbers
 
-    if (!isNaN(x) && !isNaN(y)) {
+        if (!isNaN(x) && !isNaN(y)) {
         let z = x + y;
         document.getElementById("result").innerHTML = "the result of x + y is : " + z;
-    } else {
+        } else {
         document.getElementById("result").innerHTML = "Please enter valid numbers for x and y.";
-    }
-}
+        }
+        }
                     </code>
-                </preview>
+                </pre>
             </div>
             <h3>Exercise 2</h3>
-        </div>
+            <div class="watch">
+                <div id="time"></div>
+            </div>
+            <button id="showExecutionButton-2">Show Execution</button>
+            <div class="execution-2">
+                <pre>
+                    <code>
+
+        // Dont forgrt to add a element in your html file with id attribute set to "time" to display timeElement...
+
+        function updateClock() {
+
+        const now = new Date();
+        const timeElement = document.getElementById("time");
+
+        let hours = now.getHours();
+        const isPm = hours >= 12;
+
+        if (hours > 12) {
+        hours -= 12;
+        }
+
+        hours = hours.toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+
+        timeElement.textContent = `${hours}:${minutes}:${seconds} ${isPm ? "PM" : "AM"}`;
+
+        }
+
+        updateClock();
+
+        setInterval(updateClock, 1000);
+                    </code>
+                </pre>
+            </div>
+            
+    </div>
     <script src="script.js"></script>   
 </body>
 </html>
