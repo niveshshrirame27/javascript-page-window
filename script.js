@@ -1,3 +1,6 @@
+
+
+
 function calculate() {
     // Get user input values for x and y
     let x = parseFloat(document.getElementById("inputX").value);
@@ -12,16 +15,23 @@ function calculate() {
     }
 }
 
-document.getElementById("showExecutionButton-1").addEventListener("click", function () {
-    const solution = document.querySelector(".execution-1");
-    if (solution.style.display === "none") {
-        solution.style.display = "block";
-        document.getElementById("showExecutionButton-1").textContent = "Hide Execution";
-    } else {
-        solution.style.display = "none";
-        document.getElementById("showExecutionButton-1").textContent = "Show Execution";
-    }
-});
+function toggleSolution(buttonId, solutionClass) {
+    const button = document.getElementById(buttonId);
+    const solution = document.querySelector(solutionClass);
+
+    button.addEventListener("click", function () {
+        if (solution.style.display === "none" || solution.style.display === "") {
+            solution.style.display = "block";
+            button.textContent = "Hide Execution";
+        } else {
+            solution.style.display = "none";
+            button.textContent = "Show Execution";
+        }
+    });
+}
+
+toggleSolution("showExecutionButton-1", ".execution-1");
+toggleSolution("showExecutionButton-2", ".execution-2");
 
 function updateClock() {
 
@@ -47,13 +57,3 @@ updateClock();
 
 setInterval(updateClock, 1000);
 
-document.getElementById("showExecutionButton-2").addEventListener("click", function () {
-    const solution = document.querySelector(".execution-2");
-    if (solution.style.display === "none") {
-        solution.style.display = "block";
-        document.getElementById("showExecutionButton-2").textContent = "Hide Execution";
-    } else {
-        solution.style.display = "none";
-        document.getElementById("showExecutionButton-2").textContent = "Show Execution";
-    }
-});
