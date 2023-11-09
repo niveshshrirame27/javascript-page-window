@@ -122,19 +122,21 @@ h4 {
     margin-bottom: 10px;
     margin-top: 10px;
     font-size: 20px;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
 .execution-1, 
 .execution-2{
     display: none;
     background-color: aliceblue;
-    width: 70%;
+    width: 100%;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
-
-
-
 @media (max-width: 550px) {
+    
     .container {
         padding: 10px;
     }
@@ -161,14 +163,102 @@ h4 {
         display: none;
         background-color: aliceblue;
         width: 100%;
-        overflow: auto; 
+        word-wrap: break-word;
+        overflow: auto;
+        padding-right:10px; 
     }
 
     .execution-1 pre,
     .execution-2 pre {
-    overflow: auto; /* Add scroll for large code blocks */
-    font-size: 7px; /* Use relative font size */
+    font-size: 7px;
     word-wrap: break-word;
+    max-width: 100%;;
+    overflow: auto;
+    }
+}
+
+@media (min-width: 550px) {
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .container h1 {
+        font-size: 30px;
+    }
+
+    .container p {
+        font-size: 16px;
+    }
+
+    .nav-logo img {
+        width: 40px;
+        height: auto;
+    }
+
+    .navbar a {
+        padding-inline-end: 10px;
+    }
+
+    .execution-1,
+    .execution-2 {
+        display: none;
+        background-color: aliceblue;
+        width: 100%;
+        word-wrap: break-word;
+        overflow: auto;
+        padding-right:10px; 
+    }
+
+    .execution-1 pre,
+    .execution-2 pre { 
+    font-size: 13px;
     max-width: 100%;
+    word-wrap: break-word;
+    overflow: auto;
+    }
+    
 }
+
+@media (min-width: 916px) {
+    
+    .container h1 {
+        font-size: 30px;
+    }
+
+    .container p {
+        font-size: 16px;
+    }
+
+    .nav-logo img {
+        width: 40px;
+        height: auto;
+    }
+
+    .navbar a {
+        padding-inline-end: 10px;
+    }
+
+    .execution-1,
+    .execution-2 {
+        display: none;
+        background-color: aliceblue;
+        width: 70%;
+        word-wrap: break-word;
+        overflow: auto;
+        padding-right:10px;
+    }
+
+    .execution-1 pre,
+    .execution-2 pre {
+        font-size: 16px;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow: auto; 
+    }
+    
 }
+
+
+
+
