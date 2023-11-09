@@ -243,7 +243,7 @@ h4 {
     .execution-2 {
         display: none;
         background-color: aliceblue;
-        width: 70%;
+        width: 80%;
         word-wrap: break-word;
         overflow: auto;
         padding-right:10px;
